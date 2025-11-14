@@ -637,9 +637,9 @@ before packages are loaded."
 
   ;; Set org-mode priority colors
   (setq org-priority-faces '((?A . (:foreground "green"))
-                            (?B . (:foreground "magenta"))
-                            (?C . (:foreground "orange"))
-                            (?D . (:foreground "yellow"))))
+                             (?B . (:foreground "magenta"))
+                             (?C . (:foreground "orange"))
+                             (?D . (:foreground "yellow"))))
 
   ;; Set counsel default search engine to google
   (setq counsel-search-engine 'google)
@@ -785,7 +785,7 @@ This function is called at the very end of Spacemacs initialization."
    '(package-selected-packages
      '(ace-link aggressive-indent all-the-icons-ivy-rich auto-compile
                 auto-highlight-symbol auto-yasnippet ayu-theme
-                centered-cursor-mode clean-aindent-mode code-review
+                centered-cursor-mode chordpro-mode clean-aindent-mode code-review
                 column-enforce-mode company-web counsel-css counsel-projectile
                 counsel-spotify define-word devdocs diminish dired-quick-sort
                 disable-mouse doom-themes dotenv-mode drag-stuff dumb-jump eat
