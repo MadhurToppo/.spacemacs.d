@@ -78,6 +78,9 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(nerd-icons
+                                      nerd-icons-dired
+                                      nerd-icons-ibuffer
+                                      nerd-icons-completion
                                       treemacs-nerd-icons
                                       nerd-icons-ivy-rich)
 
@@ -598,6 +601,9 @@ before packages are loaded."
   (set-display-table-slot standard-display-table
                           'vertical-border
                           (make-glyph-code ?│))
+
+  ;; Disable lsp headerline breadcrumb icons
+  (setq lsp-headerline-breadcrumb-icons-enable nil)
 
   ;; Org-mode customization
   ;; (setq org-hide-leading-stars t)
