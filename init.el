@@ -58,7 +58,7 @@ This function should only modify configuration layer settings."
               counsel-spotify-client-id "4739882d165547169c67c9c017742955"
               counsel-spotify-client-secret "3c6ce98e6a4b43cb9bb39b26533aa2dc")
      themes-megapack
-     treemacs
+     (treemacs :variables treemacs-use-git-mode 'deferred)
      java
      (yaml :variables yaml-enable-lsp t)
      )
