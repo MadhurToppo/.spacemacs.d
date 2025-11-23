@@ -590,6 +590,14 @@ before packages are loaded."
   (nerd-icons-ivy-rich-mode 1)
   (ivy-rich-mode 1)
 
+  ;; Enable nerd icons
+  (require 'nerd-icons)
+  (require 'nerd-icons-dired)
+  (add-hook 'dired-mode-hook #'nerd-icons-dired-mode)
+  (add-hook 'ibuffer-mode-hook #'nerd-icons-ibuffer-mode)
+  (require 'nerd-icons-completion)
+  (nerd-icons-completion-mode)
+
   ;; Treemacs Nerd Icons
   (require 'treemacs-nerd-icons)
   (treemacs-load-theme "nerd-icons")
