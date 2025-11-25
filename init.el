@@ -641,13 +641,29 @@ before packages are loaded."
                 ("DONE" :foreground "dark green" :weight bold)
                 ("DECLINED" :foreground "dark green" :weight bold))))
 
-  ;; Org-todo automatically change to done when all children are done
-  (defun org-summary-todo (n-done n-not-done)
-    ;; "Switch entry to DONE when all subentries are done, to TODO otherwise."
-    (let (org-log-done org-todo-log-states)   ; turn off logging
-      (org-todo (if (= n-not-done 0) "DONE" "ACTIVE"))))
+  ;; Summary hook
+  (defun my/org-summary-todo (n-done n-not-done)
+    (let (org-log-done org-todo-log-states)
+      (when (= n-not-done 0)
+        (org-todo "DONE"))))
 
-  (add-hook 'org-after-todo-statistics-hook #'org-summary-todo)
+  (add-hook 'org-after-todo-statistics-hook #'my/org-summary-todo)
+
+  ;; Propagate to parents, always overwrite
+  (defun my/org-propagate-todo-upwards (state)
+    "Propagate STATE to all parent headings."
+    (save-excursion
+      (while (org-up-heading-safe)
+        ;; just set parent to STATE, no special DONE guard
+        (when (member state org-todo-keywords-1)
+          (org-todo state)))))
+
+  ;; Hook to capture the new state change
+  (defun my/org-after-todo-state-change ()
+    (when (and org-state (member org-state org-todo-keywords-1))
+      (my/org-propagate-todo-upwards org-state)))
+
+  (add-hook 'org-after-todo-state-change-hook #'my/org-after-todo-state-change)
 
   ;; Load org agenda files
   (load-library "find-lisp")
