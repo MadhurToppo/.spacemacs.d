@@ -707,6 +707,15 @@ before packages are loaded."
   (setq org-pomodoro-long-break-length 60)
   (setq org-pomodoro-long-break-frequency 60)
 
+  ;; Pomodoro timer for 5 minutes
+  (defun org-pomodoro-5 ()
+    (interactive)
+    (let ((orig org-pomodoro-length))
+      (setq org-pomodoro-length 5)
+      (unwind-protect
+          (org-pomodoro)
+        (setq org-pomodoro-length orig))))
+
   ;; Set vterm timer delay to improve performance
   (setq vterm-timer-delay 0.005)
 
