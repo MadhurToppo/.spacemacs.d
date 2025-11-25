@@ -40,7 +40,9 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      syntax-checking
      auto-completion
-     (colors :variables colors-colorize-identifiers 'all)
+     (colors :variables
+             colors-colorize-identifiers 'all
+             colors-enable-nyan-cat-progress-bar t)
      html
      emacs-lisp
      git
