@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
           ivy-enable-advanced-buffer-information t
           ivy-enable-icons t)
      lsp
-     (markdown :variables markdown-live-preview-engine 'grip)
+     (markdown :variables markdown-live-preview-engine 'vmd)
      org
      (shell :variables
             close-window-with-terminal t
