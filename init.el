@@ -624,6 +624,7 @@ before packages are loaded."
   (setq org-startup-folded t)
   (spaceline-toggle-org-clock-on)
   (setq org-duration-format (quote h:mm))
+  (setq org-agenda-span 'day)
 
   ;; Define todo states
   (setq org-todo-keywords
