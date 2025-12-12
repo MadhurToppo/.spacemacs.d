@@ -705,6 +705,12 @@ before packages are loaded."
           (org-pomodoro)
         (setq org-pomodoro-length orig))))
 
+  ;; Set vterm timer delay to improve performance
+  (setq vterm-timer-delay 0.005)
+
+  ;; Increase to 1 MB from default 4 KB, which is too low for TUI apps like lazygit
+  (setq read-process-output-max (* 1024 1024)) ;; 1 MB
+
   )
 
 
@@ -720,9 +726,11 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(custom-enabled-themes '(doom-monokai-spectrum))
+   '(custom-enabled-themes '(doom-molokai))
    '(custom-safe-themes
-     '("1bc640af8b000ae0275dbffefa2eb22ec91f6de53aca87221c125dc710057511"
+     '("70c88c01b0b5fde9ecf3bb23d542acba45bb4c5ae0c1330b965def2b6ce6fac3"
+       "be0d9f0e72a4ebc4a59c382168921b082b4dc15844bdaf1353c08157806b3321"
+       "1bc640af8b000ae0275dbffefa2eb22ec91f6de53aca87221c125dc710057511"
        "01f347a923dd21661412d4c5a7c7655bf17fb311b57ddbdbd6fce87bd7e58de6" default)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
