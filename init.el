@@ -633,7 +633,7 @@ before packages are loaded."
   ;; Set todo keyword colors
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "orange" :weight bold)
-                ("SCHEDULED" :foreground "light blue" :weight bold)
+                ("SCHEDULED" :foreground "light green" :weight bold)
                 ("NEXT" :foreground "pink" :weight bold)
                 ("ACTIVE" :foreground "magenta" :weight bold)
                 ("PAUSED" :foreground "violet" :weight bold)
@@ -728,10 +728,77 @@ This function is called at the very end of Spacemacs initialization."
    ;; If there is more than one, they won't work right.
    '(custom-enabled-themes '(doom-molokai))
    '(custom-safe-themes
-     '("70c88c01b0b5fde9ecf3bb23d542acba45bb4c5ae0c1330b965def2b6ce6fac3"
+     '("4594d6b9753691142f02e67b8eb0fda7d12f6cc9f1299a49b819312d6addad1d"
+       "70c88c01b0b5fde9ecf3bb23d542acba45bb4c5ae0c1330b965def2b6ce6fac3"
        "be0d9f0e72a4ebc4a59c382168921b082b4dc15844bdaf1353c08157806b3321"
        "1bc640af8b000ae0275dbffefa2eb22ec91f6de53aca87221c125dc710057511"
-       "01f347a923dd21661412d4c5a7c7655bf17fb311b57ddbdbd6fce87bd7e58de6" default)))
+       "01f347a923dd21661412d4c5a7c7655bf17fb311b57ddbdbd6fce87bd7e58de6" default))
+   '(package-selected-packages
+     '(ace-link afternoon-theme aggressive-indent alect-themes all-the-icons-ivy-rich
+                ample-theme ample-zen-theme amx anti-zenburn-theme
+                apropospriate-theme auto-compile auto-highlight-symbol
+                auto-yasnippet badwolf-theme birds-of-paradise-plus-theme
+                bubbleberry-theme busybee-theme catppuccin-theme
+                centered-cursor-mode cherry-blossom-theme chocolate-theme
+                chordpro-mode clean-aindent-mode clues-theme code-review
+                color-identifiers-mode color-theme-sanityinc-solarized
+                color-theme-sanityinc-tomorrow column-enforce-mode company-web
+                counsel-css counsel-projectile counsel-spotify cyberpunk-theme
+                dakrone-theme darkmine-theme darkokai-theme darktooth-theme
+                define-word devdocs diminish dired-quick-sort disable-mouse
+                django-theme doom-themes dotenv-mode dracula-theme drag-stuff
+                dumb-jump eat edit-indirect ef-themes elisp-def elisp-demos
+                elisp-slime-nav emmet-mode emr esh-help eshell-prompt-extras
+                eshell-z espresso-theme eval-sexp-fu evil-anzu evil-args
+                evil-cleverparens evil-collection evil-easymotion evil-escape
+                evil-evilified-state evil-exchange evil-goggles evil-iedit-state
+                evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
+                evil-nerd-commenter evil-numbers evil-org evil-surround
+                evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
+                evil-visualstar exotica-theme expand-region eyebrowse eziam-themes
+                fancy-battery farmhouse-themes flatland-theme flatui-theme flx
+                flycheck-elsa flycheck-package flycheck-pos-tip gandalf-theme
+                gh-md git-link git-messenger git-modes git-timemachine
+                gitignore-templates gnuplot golden-ratio google-translate
+                gotham-theme grandshell-theme groovy-imports groovy-mode
+                gruber-darker-theme gruvbox-theme hc-zenburn-theme helm-make
+                hemisu-theme heroku-theme hide-comnt highlight-indentation
+                highlight-numbers highlight-parentheses hl-todo holy-mode
+                hungry-delete hybrid-mode impatient-mode indent-guide info+
+                inkpot-theme inspector ir-black-theme ivy-avy ivy-hydra
+                ivy-purpose ivy-xref ivy-yasnippet jazz-theme jbeans-theme
+                kaolin-themes light-soap-theme link-hint lorem-ipsum lsp-ivy
+                lsp-java lsp-origami lsp-ui lush-theme macrostep madhat2r-theme
+                markdown-toc material-theme maven-test-mode minimal-theme
+                moe-theme molokai-theme monochrome-theme monokai-theme multi-line
+                multi-term multi-vterm mustang-theme mvn nameless naquadah-theme
+                nerd-icons-completion nerd-icons-dired nerd-icons-ibuffer
+                nerd-icons-ivy-rich noctilux-theme nyan-mode obsidian-theme
+                occidental-theme oldlace-theme omtose-phellack-themes
+                open-junk-file org-cliplink org-contrib org-download org-mime
+                org-pomodoro org-present org-projectile org-rich-yank
+                org-superstar organic-green-theme orgit-forge overseer
+                page-break-lines paradox password-generator pcre2el
+                pdf-view-restore phoenix-dark-mono-theme phoenix-dark-pink-theme
+                planet-theme popwin prettier-js professional-theme pug-mode
+                purple-haze-theme quickrun railscasts-theme rainbow-delimiters
+                rainbow-identifiers rainbow-mode rebecca-theme restart-emacs
+                reverse-theme sass-mode scss-mode seti-theme shell-pop slim-mode
+                smeargle smyx-theme soft-charcoal-theme soft-morning-theme
+                soft-stone-theme solarized-theme soothe-theme space-doc
+                spacegray-theme spaceline spacemacs-purpose-popwin
+                spacemacs-whitespace-cleanup spotify string-edit-at-point
+                string-inflection subatomic-theme subatomic256-theme
+                sublime-themes sunny-day-theme symbol-overlay symon tagedit
+                tango-2-theme tango-plus-theme tangotango-theme tao-theme
+                term-cursor terminal-here toc-org toxi-theme treemacs-evil
+                treemacs-icons-dired treemacs-magit treemacs-nerd-icons
+                treemacs-persp treemacs-projectile twilight-anti-bright-theme
+                twilight-bright-theme twilight-theme ujelly-theme underwater-theme
+                undo-fu-session vi-tilde-fringe vmd-mode volatile-highlights vundo
+                web-beautify web-mode wgrep white-sand-theme winum writeroom-mode
+                ws-butler yaml-mode yasnippet-snippets zen-and-art-theme
+                zenburn-theme zonokai-emacs)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
