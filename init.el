@@ -85,6 +85,8 @@ This function should only modify configuration layer settings."
                                       treemacs-nerd-icons
                                       nerd-icons-ivy-rich
                                       chordpro-mode
+                                      org-roam
+                                      org-roam-ui
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -691,10 +693,10 @@ before packages are loaded."
   (setq ivy-initial-inputs-alist nil)
 
   ;; Change org pomodoro timer
-  (setq org-pomodoro-length 60)
-  (setq org-pomodoro-short-break-length 5)
-  (setq org-pomodoro-long-break-length 60)
-  (setq org-pomodoro-long-break-frequency 60)
+  ;; (setq org-pomodoro-length 60)
+  ;; (setq org-pomodoro-short-break-length 5)
+  ;; (setq org-pomodoro-long-break-length 60)
+  ;; (setq org-pomodoro-long-break-frequency 60)
 
   ;; Pomodoro timer for 5 minutes
   (defun org-pomodoro-5 ()
@@ -710,6 +712,25 @@ before packages are loaded."
 
   ;; Increase to 1 MB from default 4 KB, which is too low for TUI apps like lazygit
   (setq read-process-output-max (* 1024 1024)) ;; 1 MB
+
+  ;; Org-roam
+  (use-package org-roam
+    :ensure t
+    :custom
+    (org-roam-directory (file-truename "~/workspace/journal"))
+    (org-roam-dailies-directory "diary/")
+    (org-roam-dailies-capture-templates
+     '(("d" "default" entry "* %?"
+        :target (file+head "%<%Y/%Y-%m-%d>.org"
+                           "#+title: %<%Y-%m-%d>\n"))))
+    :config
+    (org-roam-db-autosync-mode))
+
+  ;; Make the vertical divider thin (terminal-friendly)
+  (set-face-foreground 'vertical-border "grey")
+  (set-display-table-slot standard-display-table
+                          'vertical-border
+                          (make-glyph-code ?│))
 
   )
 
