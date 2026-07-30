@@ -630,17 +630,14 @@ before packages are loaded."
 
   ;; Define todo states
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "SCHEDULED(s)" "NEXT(n)" "ACTIVE(a)" "PAUSED(p)" "|" "DONE(D)" "DECLINED(x)")))
+        '((sequence "TODO(t)" "DOING(d)" "|" "DONE(D)" "REJECTED(r)")))
 
   ;; Set todo keyword colors
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "orange" :weight bold)
-                ("SCHEDULED" :foreground "light green" :weight bold)
-                ("NEXT" :foreground "pink" :weight bold)
-                ("ACTIVE" :foreground "magenta" :weight bold)
-                ("PAUSED" :foreground "violet" :weight bold)
+                ("DOING" :foreground "magenta" :weight bold)
                 ("DONE" :foreground "dark green" :weight bold)
-                ("DECLINED" :foreground "dark green" :weight bold))))
+                ("REJECTED" :foreground "dark green" :weight bold))))
 
   ;; Summary hook
   (defun my/org-summary-todo (n-done n-not-done)
@@ -721,8 +718,8 @@ before packages are loaded."
     (org-roam-dailies-directory "diary/")
     (org-roam-dailies-capture-templates
      '(("d" "default" entry "* %?"
-        :target (file+head "%<%Y/%Y-%m-%d>.org"
-                           "#+title: %<%Y-%m-%d>\n"))))
+        :target (file+head "%<%Y/%m-%d-%a>.org"
+                           "#+title: %<%m-%d-%a>\n"))))
     :config
     (org-roam-db-autosync-mode))
 
@@ -731,6 +728,19 @@ before packages are loaded."
   (set-display-table-slot standard-display-table
                           'vertical-border
                           (make-glyph-code ?│))
+
+  ;; Enable Org Habit module
+  (add-to-list 'org-modules 'org-habit)
+
+  ;; Show Todos children in Org-agenda
+  ;; (with-eval-after-load 'org-agenda
+  ;;   (defun my/org-has-children ()
+  ;;     (if (save-excursion (org-goto-first-child)) "▶" " ")
+  ;;     )
+  ;;   (add-to-list 'org-agenda-prefix-format '(
+  ;;                                            agenda  . "%i%-3:(my/org-has-children) %-12:c%?-12t% s "
+  ;;                                            ))
+  ;;   )
 
   )
 
